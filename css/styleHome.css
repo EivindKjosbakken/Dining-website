@@ -1,0 +1,230 @@
+/* Formatering på hele */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Gjeldende for HTML - smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+/* Variable */
+:root {
+  --lightGreen: rgba(236, 255, 235, 0.7);
+  /* --lightGreen: #e99c96d3; */
+  --darkGreen: #7b886b;
+  --gray: #757575;
+  --beige: rgba(255, 250, 235, 0.7);
+  --focusColor: rgba(255, 96, 4, 0.671);
+  --orange: rgba(255, 130, 72, 0.377);
+  --yellow: rgba(255, 187, 0, 0.247);
+}
+/* Gjeldende for div */
+body {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/background-1724792952-0x0.jpg) center/cover no-repeat fixed;
+}
+div {
+  /* Font */
+  font-family: sans-serif;
+  /* Midtstilling og kollonne */
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+#top {
+  position: absolute;
+  top: 0;
+}
+
+/* Gjeldende for startsiden */
+.startPage {
+  height: 100vh;
+  max-width: 100vw;
+  /* background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./img/background-1724792952-0x0.jpg) center/cover no-repeat fixed; */
+  position: relative;
+}
+/* Stor logo på toppen */
+#logo {
+  height: 30vh;
+}
+/* Overskrift på startside */
+#header {
+  font-size: 15vh;
+  margin-bottom: 5vh;
+  text-shadow: 2px 2px 2px var(white);
+}
+/* Innloggingsfelt */
+.form {
+  /* Boks rundt */
+  max-height: 30vh;
+  max-width: 23vw;
+  background: var(--beige);
+  border-radius: 6px;
+  padding: 1vh;
+  box-shadow: 0px 0px 6px var(--gray);
+  /* Tekst */
+  text-shadow: 0px 0px 1px var(--gray);
+  /* Plassering */
+  margin-bottom: 15vh;
+}
+/* Innloggingsfelt */
+.logIn {
+  margin: 0.5vh;
+  width: 18vw;
+  height: 4vh;
+  text-align: center;
+  border: 1px solid var(--gray);
+  background-color: var(--orange);
+  font-size: 2vh;
+  border-radius: 3px;
+}
+.login:focus {
+  outline: none;
+  border-radius: 3px;
+}
+.logIn:hover {
+  color: black;
+  box-shadow: 0px 0px 6px var(--gray);
+}
+/* Innloggingsknapp */
+#logInButton {
+  background-color: var(--beige);
+  outline: none;
+  height: 4vh;
+  font-size: 2vh;
+  cursor: pointer;
+}
+#logInButton:hover {
+  border: 1px solid var(--focusColor);
+  font-size: 2.2vh;
+  color: var(--focusColor);
+}
+/* Registreringslink */
+.registrer {
+  display: inline-block;
+  font-size: 2vh;
+  color: rgba(46, 46, 46, 0.788);
+}
+#regLink:hover {
+  color: black;
+  font-size: 2.1vh;
+}
+/* "om oss"-knapp */
+.toAboutButton {
+  position: absolute;
+  bottom: 0;
+}
+#toAboutButton {
+  cursor: pointer;
+  background: var(--beige);
+  padding: 1.4vh 7.9vh;
+  margin: 0;
+  border: 0px solid var(--gray);
+  font-size: 2vh;
+  border-radius: 3px 3px 0 0;
+}
+/* Animasjon til piler*/
+@keyframes aboutArrow {
+  33% {
+    transform: translateY(0.5vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes logInArrow {
+  33% {
+    transform: translateY(-0.5vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#toAboutButton:hover > #arrowDown {
+  animation: aboutArrow 0.7s 0s 2;
+}
+#toAboutButton:hover {
+  box-shadow: 0px -1px 5px black;
+  font-size: 2.2vh;
+}
+/* knapp tilbake til innlogging */
+.toLogInButton {
+  position: absolute;
+  top: 0;
+}
+#toLogInButton {
+  cursor: pointer;
+  background: var(--beige);
+  padding: 1.4vh 2vh;
+  margin: 0;
+  border: 0px solid var(--gray);
+  font-size: 2vh;
+  border-radius: 0 0 3px 3px;
+}
+#toLogInButton:hover {
+  box-shadow: 0px 1px 5px black;
+  font-size: 2.2vh;
+}
+#toLogInButton:hover > #arrowUp {
+  animation: logInArrow 0.7s 0s 2;
+}
+/* Infosiden */
+.aboutPage {
+  height: 100vh;
+  background: var(--beige);
+  font-size: 1.5em;
+}
+#smallLogo {
+  margin-bottom: 10vh;
+  width: 22vh;
+}
+/* Dersom skjermen er liten */
+@media screen and (max-width: 1200px) {
+  .logIn {
+    font-size: 1.7vh;
+  }
+  .registrer {
+    font-size: 1.7vh;
+  }
+  .logIn {
+    font-size: 1.7vh;
+    width: 20vw;
+  }
+  .form {
+    /* Boks rundt */
+    max-width: 25vw;
+  }
+}
+@media screen and (max-width: 780px) {
+  #header {
+    font-size: 10vh;
+  }
+  .logIn {
+    font-size: 1.5vh;
+    width: 27vw;
+  }
+  .form {
+    /* Boks rundt */
+    max-width: 30vw;
+  }
+  #toLogInButton {
+    padding: 1.4vh 2vh;
+    font-size: 1.2vh;
+  }
+  #toAboutButton {
+    padding: 1.4vh 5.55vh;
+    font-size: 1.2vh;
+  }
+  #toLogInButton:hover,
+  #toAboutButton:hover {
+    font-size: 1.4vh;
+  }
+  #regLink:hover {
+    font-size: 1.8vh;
+  }
+}
